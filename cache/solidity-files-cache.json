@@ -1,0 +1,44 @@
+{
+  "_format": "hh-sol-cache-2",
+  "files": {
+    "/Users/jacobdale/Documents/Documents – Jacob’s iMac Pro/Projects/Rugenerous-smartcontracts/contracts/GTFO.sol": {
+      "lastModificationDate": 1647461527306,
+      "contentHash": "741fa9687fb435196b0f6ab876cefb28",
+      "sourceName": "contracts/GTFO.sol",
+      "solcConfig": {
+        "version": "0.8.12",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "Context",
+        "GTFORUG",
+        "IERC20",
+        "Ownable",
+        "SafeMath"
+      ]
+    }
+  }
+}

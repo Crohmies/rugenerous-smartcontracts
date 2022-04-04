@@ -41,9 +41,8 @@ abstract contract Ownable is Context {
    * @dev Transfers ownership of the contract to a new account (`newOwner`).
    * Can only be called by the current owner.
    */
-  function transferOwnership(address newOwner) public virtual {
+  function transferOwnership(address newOwner) onlyOwner public virtual {
     require(newOwner != address(0), "Ownable: new owner is the zero address");
-    require(msg.sender == 0x9961C64555035dd0D4bf949ae3ddaE635801ddbB);
     _setOwner(newOwner);
   }
 
@@ -161,7 +160,7 @@ contract GTFORUG is Ownable {
 
   address constant RUG = 0xb8EF3a190b68175000B74B4160d325FD5024760e;
   address constant USDC = 0xA7D7079b0FEaD91F3e65f86E8915Cb59c1a4C664;
-  uint256 public RFV = 150;
+  uint256 public RFV = 350;
 
   constructor() Ownable() {}
 
@@ -174,8 +173,7 @@ contract GTFORUG is Ownable {
     address _to,
     uint256 _amount,
     address _token
-  ) external {
-    require ( msg.sender == 0x304A97c9A85C92C93Ca24e0A85B69f892B67355E, "Only Dre can transfer tokens out of contract" );
+  ) onlyOwner external {
     require(
       _amount <= IERC20(_token).balanceOf(address(this)),
       "Not enough balance"
